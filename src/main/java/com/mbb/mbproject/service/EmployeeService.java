@@ -9,5 +9,6 @@ public interface EmployeeService {
     Employee addEmployee(EmployeeVo employee);
     
     List<Employee> listEmployee(Employee employee);
-    String listEmployeeFromExtApi();
+    
+    String listEmployeeFromExtApi(Employee employee);
 }

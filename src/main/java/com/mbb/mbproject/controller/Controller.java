@@ -8,10 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,17 +29,17 @@ public class Controller {
         return new ResponseEntity<>(employeeSavedToDB, HttpStatus.CREATED);
     }
     
-    @PostMapping("/all")
+    @GetMapping("/all")
     public ResponseEntity<List<Employee>> getAllEmployee(@RequestBody Employee employee) {
         LOGGER.info("Receiving List Request: " + employee);
         List<Employee> listEmployee = employeeService.listEmployee(employee);
         return new ResponseEntity<>(listEmployee, HttpStatus.OK);
     }
     
-    @PostMapping("/extapi")
-    public ResponseEntity<String> getAllEmployeeFromExtApi(@RequestBody Employee employee) throws Exception{
+    @GetMapping("/extapi")
+    public ResponseEntity<String> getAllEmployeeFromExtApi(@RequestBody Employee employee) {
         LOGGER.info("Receiving List Request: " + employee);
-        String listEmployee = employeeService.listEmployeeFromExtApi();
+        String listEmployee = employeeService.listEmployeeFromExtApi(employee);
         return new ResponseEntity<>(listEmployee, HttpStatus.OK);
     }
 }

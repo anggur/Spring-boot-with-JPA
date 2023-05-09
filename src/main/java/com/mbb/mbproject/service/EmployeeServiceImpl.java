@@ -68,7 +68,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
     
     @Override
-    public String listEmployeeFromExtApi() {
+    public String listEmployeeFromExtApi(Employee employee) {
         LOGGER.info("Getting employee list using nested API");
         RestTemplate restTemplate = new RestTemplate();
         String result = restTemplate.getForObject(ApiEndpoint, String.class);
