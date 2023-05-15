@@ -1,4 +1,4 @@
-package com.mbb.mbproject.model;
+package com.mbb.jpa.model;
 
 import lombok.*;
 
@@ -11,3 +11,4 @@ public class EmployeeVo {
     private String name;
     private String address;
 }
+

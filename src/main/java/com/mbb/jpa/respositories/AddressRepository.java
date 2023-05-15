@@ -1,6 +1,6 @@
-package com.mbb.mbproject.repository;
+package com.mbb.jpa.respositories;
 
-import com.mbb.mbproject.entities.Address;
+import com.mbb.jpa.entities.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AddressRepository extends JpaRepository<Address, Integer> {

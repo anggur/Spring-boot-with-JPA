@@ -1,7 +1,7 @@
-package com.mbb.mbproject.service;
+package com.mbb.jpa.service;
 
-import com.mbb.mbproject.entities.Employee;
-import com.mbb.mbproject.model.EmployeeVo;
+import com.mbb.jpa.entities.Employee;
+import com.mbb.jpa.model.EmployeeVo;
 
 import java.util.List;
 

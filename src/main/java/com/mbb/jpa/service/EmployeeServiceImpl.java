@@ -1,8 +1,9 @@
-package com.mbb.mbproject.service;
+package com.mbb.jpa.service;
 
-import com.mbb.mbproject.entities.Address;
-import com.mbb.mbproject.entities.Employee;
-import com.mbb.mbproject.model.EmployeeVo;
+import com.mbb.jpa.entities.Address;
+import com.mbb.jpa.entities.Employee;
+import com.mbb.jpa.model.EmployeeVo;
+import com.mbb.jpa.respositories.EmployeeRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.mbb.mbproject.repository.EmployeeRepository;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -20,7 +19,7 @@ import java.util.Objects;
 
 @Service(value = "EmployeeService")
 @Transactional
-public class EmployeeServiceImpl implements EmployeeService {
+public class EmployeeServiceImpl  implements EmployeeService {
     
     private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeServiceImpl.class);
     
@@ -75,6 +74,5 @@ public class EmployeeServiceImpl implements EmployeeService {
         LOGGER.info("Getting employee list from nested API success");
         return result;
     }
+    
 }
-
-

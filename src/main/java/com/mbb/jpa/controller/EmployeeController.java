@@ -1,8 +1,8 @@
-package com.mbb.mbproject.controller;
+package com.mbb.jpa.controller;
 
-import com.mbb.mbproject.entities.Employee;
-import com.mbb.mbproject.model.EmployeeVo;
-import com.mbb.mbproject.service.EmployeeService;
+import com.mbb.jpa.entities.Employee;
+import com.mbb.jpa.model.EmployeeVo;
+import com.mbb.jpa.service.EmployeeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +11,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
-
 @RestController
 @RequestMapping("/api/employee")
-public class Controller {
-    private static final Logger LOGGER = LoggerFactory.getLogger(Controller.class);
+public class EmployeeController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeController.class);
     
     @Autowired
     private EmployeeService employeeService;
@@ -43,4 +41,3 @@ public class Controller {
         return new ResponseEntity<>(listEmployee, HttpStatus.OK);
     }
 }
-
